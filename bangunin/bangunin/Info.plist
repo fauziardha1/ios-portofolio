@@ -6,6 +6,10 @@
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
 		<false/>
+		<key>Privacy - Location When In Use Usage Description</key>
+		<string>We need your location to provide you with our services.</string>
+		<key>Privacy - Location Always and When In Use Usage Description</key>
+		<string>We need your location to provide you with our services.</string>
 	</dict>
 </dict>
 </plist>
