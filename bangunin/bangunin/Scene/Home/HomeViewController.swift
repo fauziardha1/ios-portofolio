@@ -9,15 +9,42 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class HomeViewController: UIViewController {
+protocol HomeDisplayLogic {
+    func updateCurrentLocation()
+    func displayFirstViewOfMap(_ position: AnnotationModel?, _ regionRadius: Double)
+    func displayCurrentLocationNotation()
+}
+
+class HomeViewController: UIViewController, HomeDisplayLogic {
     private let locationManager = CLLocationManager()
+    var location: CLLocation?
+    private var userCurrentLocation: CLLocation? {
+        didSet {
+            displayCurrentLocationNotation()
+        }
+    }
+    private var locationStatus: CLAuthorizationStatus?
+    var statusString: String {
+        guard let status = locationStatus else {
+            return "unknown"
+        }
+        
+        switch status {
+            case .notDetermined: return "notDetermined"
+            case .authorizedWhenInUse: return "authorizedWhenInUse"
+            case .authorizedAlways: return "authorizedAlways"
+            case .restricted: return "restricted"
+            case .denied: return "denied"
+            default: return "unknown"
+        }
+    }
+    private let defaultLocation: AnnotationModel = .init(lat: -6.174867960298316, long: 106.82727149914197, title: "Monas")
     
     lazy var mapView: MKMapView = {
         let mapView = MKMapView()
         mapView.translatesAutoresizingMaskIntoConstraints = false
         return mapView
     }()
-    
     lazy var currentLocationButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(named: "currentLocationImage"), for: .normal)
@@ -35,12 +62,10 @@ class HomeViewController: UIViewController {
         button.layer.shadowRadius = 4
         return button
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        view.backgroundColor = .systemBlue
-        title = "Main View Controller"
+        getPermissionForLocation()
         
         setup()
         layout()
@@ -54,14 +79,17 @@ class HomeViewController: UIViewController {
         view.addSubview(mapView)
         view.addSubview(currentLocationButton)
         
+        setupConstraintsForMapView()
+        setupConstraintsForCurrentLocationButton()
+    }
+    
+    private func setupConstraintsForMapView() {
         NSLayoutConstraint.activate([
             mapView.topAnchor.constraint(equalTo: self.view.topAnchor),
             mapView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
             mapView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
             mapView.rightAnchor.constraint(equalTo: self.view.rightAnchor)
         ])
-        
-        setupConstraintsForCurrentLocationButton()
     }
     
     private func setupConstraintsForCurrentLocationButton(){
@@ -72,16 +100,7 @@ class HomeViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        let initialLocation = CLLocationCoordinate2D(latitude: -6.2248109477768425, longitude: 106.82952080866995) // Kuningan city
-            
-            let regionRadius: CLLocationDistance = 1000 // 1km
-            
-            let coordinateRegion = MKCoordinateRegion(center: initialLocation, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
-            
-            mapView.setRegion(coordinateRegion, animated: true)
-        setAnnotation(.init(lat: -6.2248109477768425, long:  106.82952080866995, title: "You"))
-        
-        getPermissionForLocation()
+        displayFirstViewOfMap()
     }
     
     private func setAnnotation(_ point: AnnotationModel){
@@ -98,25 +117,43 @@ class HomeViewController: UIViewController {
     
     private func getPermissionForLocation() {
         locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
         locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
+    }
+    
+    
+    func updateCurrentLocation() {}
+    
+    func displayFirstViewOfMap(_ position: AnnotationModel? = nil, _ regionRadius: Double = 1000) {
+        var pos: AnnotationModel = position ?? defaultLocation
+        let initialLocation = CLLocationCoordinate2D(latitude: pos.lat, longitude: pos.long)
+        let coordinateRegion = MKCoordinateRegion(center: initialLocation, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
+        
+        mapView.setRegion(coordinateRegion, animated: true)
+    }
+    
+    func displayCurrentLocationNotation() {
+        guard let position = userCurrentLocation else {return}
+        
+        setAnnotation(.init(lat: position.coordinate.latitude, long: position.coordinate.longitude, title: "Your Location"))
     }
 }
 
-
 extension HomeViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let currentLocation = locations.last else {
-           return
-       }
-       
-       // Use the currentLocation coordinate to set the map's center
-       let coordinate = currentLocation.coordinate
-       mapView.setCenter(coordinate, animated: true)
+        guard let currentLocation = locations.last else {return}
+        
+        // update variable user current location
+        userCurrentLocation = currentLocation
+        mapView.setCenter(currentLocation.coordinate, animated: true)
        
        // Optionally, stop updating the location once you have obtained the initial location
        locationManager.stopUpdatingLocation()
     }
     
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+            locationStatus = status
+            print(#function, statusString)
+        }
 }
-
