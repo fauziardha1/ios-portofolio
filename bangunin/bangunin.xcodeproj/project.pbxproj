@@ -11,6 +11,9 @@
 		03A5BFD52A5542FC00C5B1D4 /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A5BFD42A5542FC00C5B1D4 /* Annotation.swift */; };
 		03D95DB62A5BB47800258BC6 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D95DB52A5BB47800258BC6 /* HomePresenter.swift */; };
 		03D95DB82A5BB6B600258BC6 /* HomePageUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D95DB72A5BB6B600258BC6 /* HomePageUIComposer.swift */; };
+		03D95DBA2A5C29F200258BC6 /* HomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D95DB92A5C29F100258BC6 /* HomeProtocols.swift */; };
+		03D95DBD2A5C2D9200258BC6 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D95DBC2A5C2D9200258BC6 /* LaunchScreenViewController.swift */; };
+		03D95DC12A5C32D200258BC6 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 03D95DC02A5C32D200258BC6 /* splash.png */; };
 		03F0D43329CA1E8C004E72C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F0D43229CA1E8C004E72C3 /* AppDelegate.swift */; };
 		03F0D43729CA1E8C004E72C3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F0D43629CA1E8C004E72C3 /* HomeViewController.swift */; };
 		03F0D43C29CA1E8F004E72C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03F0D43B29CA1E8F004E72C3 /* Assets.xcassets */; };
@@ -42,6 +45,9 @@
 		03A5BFD42A5542FC00C5B1D4 /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
 		03D95DB52A5BB47800258BC6 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		03D95DB72A5BB6B600258BC6 /* HomePageUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageUIComposer.swift; sourceTree = "<group>"; };
+		03D95DB92A5C29F100258BC6 /* HomeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocols.swift; sourceTree = "<group>"; };
+		03D95DBC2A5C2D9200258BC6 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
+		03D95DC02A5C32D200258BC6 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = splash.png; path = ../../../../Downloads/splash.png; sourceTree = "<group>"; };
 		03F0D42F29CA1E8C004E72C3 /* bangunin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bangunin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03F0D43229CA1E8C004E72C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03F0D43629CA1E8C004E72C3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +89,7 @@
 		0356AA252A56958100D2DA4B /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				03D95DBB2A5C2D7400258BC6 /* LaunchScreen */,
 				0356AA262A5695D000D2DA4B /* Home */,
 			);
 			path = Scene;
@@ -95,6 +102,7 @@
 				0356AA272A56CC2300D2DA4B /* HomeInteractor.swift */,
 				03D95DB52A5BB47800258BC6 /* HomePresenter.swift */,
 				03D95DB72A5BB6B600258BC6 /* HomePageUIComposer.swift */,
+				03D95DB92A5C29F100258BC6 /* HomeProtocols.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -105,6 +113,14 @@
 				03A5BFD42A5542FC00C5B1D4 /* Annotation.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		03D95DBB2A5C2D7400258BC6 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				03D95DBC2A5C2D9200258BC6 /* LaunchScreenViewController.swift */,
+			);
+			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
 		03F0D42629CA1E8C004E72C3 = {
@@ -134,6 +150,7 @@
 				03A5BFD32A5542E600C5B1D4 /* Model */,
 				03F0D43229CA1E8C004E72C3 /* AppDelegate.swift */,
 				03F0D43B29CA1E8F004E72C3 /* Assets.xcassets */,
+				03D95DC02A5C32D200258BC6 /* splash.png */,
 				03F0D43D29CA1E8F004E72C3 /* LaunchScreen.storyboard */,
 				03F0D44029CA1E8F004E72C3 /* Info.plist */,
 			);
@@ -261,6 +278,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03D95DC12A5C32D200258BC6 /* splash.png in Resources */,
 				03F0D43F29CA1E8F004E72C3 /* LaunchScreen.storyboard in Resources */,
 				03F0D43C29CA1E8F004E72C3 /* Assets.xcassets in Resources */,
 			);
@@ -289,8 +307,10 @@
 			files = (
 				03F0D43729CA1E8C004E72C3 /* HomeViewController.swift in Sources */,
 				03D95DB82A5BB6B600258BC6 /* HomePageUIComposer.swift in Sources */,
+				03D95DBD2A5C2D9200258BC6 /* LaunchScreenViewController.swift in Sources */,
 				03A5BFD52A5542FC00C5B1D4 /* Annotation.swift in Sources */,
 				03F0D43329CA1E8C004E72C3 /* AppDelegate.swift in Sources */,
+				03D95DBA2A5C29F200258BC6 /* HomeProtocols.swift in Sources */,
 				03D95DB62A5BB47800258BC6 /* HomePresenter.swift in Sources */,
 				0356AA282A56CC2400D2DA4B /* HomeInteractor.swift in Sources */,
 			);
@@ -464,8 +484,11 @@
 				DEVELOPMENT_TEAM = 3WJP849PN2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = bangunin/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need your location to provide you with our services.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We need your location to provide you with our services.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to provide you with our services.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -491,8 +514,11 @@
 				DEVELOPMENT_TEAM = 3WJP849PN2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = bangunin/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need your location to provide you with our services.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We need your location to provide you with our services.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to provide you with our services.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

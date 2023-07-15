@@ -7,11 +7,20 @@
 
 import Foundation
 
-protocol HomePresentationLogic {
-    var controller: HomeViewController? { get set }
-    func setFirstViewOfMap()
-    func updateCurrentLocation()
-    func displayCurrentLocationNotation()
+class HomePresenter: HomePresentationLogic {
+    weak var controller: HomeViewController?
+    
+    func setFirstViewOfMap() {
+        controller?.displayFirstViewOfMap()
+    }
+    
+    func updateCurrentLocation() {
+        controller?.updateCurrentLocation()
+    }
+    
+    func displayCurrentLocationNotation() {
+        controller?.displayCurrentLocationNotation()
+    }
+    
 }
-
 

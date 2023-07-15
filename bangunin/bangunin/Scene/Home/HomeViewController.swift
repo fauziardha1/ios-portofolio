@@ -9,12 +9,6 @@ import UIKit
 import MapKit
 import CoreLocation
 
-protocol HomeDisplayLogic {
-    func updateCurrentLocation()
-    func displayFirstViewOfMap(_ position: AnnotationModel?, _ regionRadius: Double)
-    func displayCurrentLocationNotation()
-}
-
 class HomeViewController: UIViewController, HomeDisplayLogic {
     private let locationManager = CLLocationManager()
     var location: CLLocation?

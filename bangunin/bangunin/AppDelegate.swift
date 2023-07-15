@@ -12,10 +12,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = UINavigationController(rootViewController: HomeViewController())
-        window?.makeKeyAndVisible()
+        
+        UIApplication.shared.clearLaunchScreenCache()
+        setupMiddleLaunchScreen(window: &window)
+        setupRootApp(window: &window)
         return true
     }
 
@@ -26,4 +26,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(_ application: UIApplication) {
         window?.isHidden = false
     }
+    
+}
+
+extension AppDelegate {
+    func setupRootApp(window: inout UIWindow?) {
+        if window == nil {
+            window = UIWindow(frame: UIScreen.main.bounds)
+        }
+        window?.rootViewController = UINavigationController(rootViewController: HomeViewController())
+        window?.makeKeyAndVisible()
+    }
+}
+
+public extension UIApplication {
+
+    func clearLaunchScreenCache() {
+        do {
+            try FileManager.default.removeItem(atPath: NSHomeDirectory()+"/Library/SplashBoard")
+            sleep(2)
+        } catch {
+            print("Failed to delete launch screen cache: \(error)")
+        }
+    }
+
 }

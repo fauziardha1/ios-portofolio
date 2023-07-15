@@ -7,18 +7,16 @@
 
 import Foundation
 
-protocol HomeBusinessLogic {
-    func getCurrentLocation()
-    func setNewAnnotation()
-}
-
 class HomeInteractor: HomeBusinessLogic {
+    weak var presenter: HomePresentationLogic?
+    
     func getCurrentLocation() {
-        // do something
+        presenter?.updateCurrentLocation()
     }
     
     func setNewAnnotation() {
         // do something
+        presenter?.displayCurrentLocationNotation()
     }
     
     
