@@ -34,7 +34,34 @@ extension AppDelegate {
         if window == nil {
             window = UIWindow(frame: UIScreen.main.bounds)
         }
-        window?.rootViewController = UINavigationController(rootViewController: HomeViewController())
+        setupTabBar(window: &window)
+    }
+    
+    func setupTabBar(window: inout UIWindow?){
+        let tabBarController = UITabBarController()
+       
+        
+        // create tabBar item
+        let homeItem = UITabBarItem()
+        homeItem.title = "Home"
+        homeItem.image = UIImage(named: "icon_home")
+        
+        let alarmsItem = UITabBarItem()
+        alarmsItem.title = "Alarms"
+        alarmsItem.image = UIImage(named: "icon_list")
+        
+        let homeVC = HomeViewController()
+        let alarmsVC = AlarmsViewController()
+        
+        homeVC.tabBarItem = homeItem
+        alarmsVC.tabBarItem = alarmsItem
+        
+        tabBarController.viewControllers = [homeVC, alarmsVC]
+        
+        tabBarController.selectedIndex = 0
+        tabBarController.tabBar.backgroundColor = .white
+        
+        window?.rootViewController = UINavigationController(rootViewController: tabBarController)
         window?.makeKeyAndVisible()
     }
 }

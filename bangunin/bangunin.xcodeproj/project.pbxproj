@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0356AA282A56CC2400D2DA4B /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0356AA272A56CC2300D2DA4B /* HomeInteractor.swift */; };
 		03A5BFD52A5542FC00C5B1D4 /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A5BFD42A5542FC00C5B1D4 /* Annotation.swift */; };
+		03D701B42A69241200FF0C55 /* AlarmsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D701B32A69241100FF0C55 /* AlarmsViewController.swift */; };
 		03D95DB62A5BB47800258BC6 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D95DB52A5BB47800258BC6 /* HomePresenter.swift */; };
 		03D95DB82A5BB6B600258BC6 /* HomePageUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D95DB72A5BB6B600258BC6 /* HomePageUIComposer.swift */; };
 		03D95DBA2A5C29F200258BC6 /* HomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D95DB92A5C29F100258BC6 /* HomeProtocols.swift */; };
@@ -43,6 +44,9 @@
 /* Begin PBXFileReference section */
 		0356AA272A56CC2300D2DA4B /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		03A5BFD42A5542FC00C5B1D4 /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
+		03D701B02A691F2D00FF0C55 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
+		03D701B12A69209F00FF0C55 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = splash.png; path = ../../../../../Downloads/splash.png; sourceTree = "<group>"; };
+		03D701B32A69241100FF0C55 /* AlarmsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmsViewController.swift; sourceTree = "<group>"; };
 		03D95DB52A5BB47800258BC6 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		03D95DB72A5BB6B600258BC6 /* HomePageUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageUIComposer.swift; sourceTree = "<group>"; };
 		03D95DB92A5C29F100258BC6 /* HomeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocols.swift; sourceTree = "<group>"; };
@@ -89,6 +93,7 @@
 		0356AA252A56958100D2DA4B /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				03D701B22A6923E600FF0C55 /* Alarms */,
 				03D95DBB2A5C2D7400258BC6 /* LaunchScreen */,
 				0356AA262A5695D000D2DA4B /* Home */,
 			);
@@ -113,6 +118,26 @@
 				03A5BFD42A5542FC00C5B1D4 /* Annotation.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		03D701AF2A691F2600FF0C55 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				03F0D43229CA1E8C004E72C3 /* AppDelegate.swift */,
+				03D701B12A69209F00FF0C55 /* splash.png */,
+				03F0D43B29CA1E8F004E72C3 /* Assets.xcassets */,
+				03D701B02A691F2D00FF0C55 /* splash.png */,
+				03F0D43D29CA1E8F004E72C3 /* LaunchScreen.storyboard */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		03D701B22A6923E600FF0C55 /* Alarms */ = {
+			isa = PBXGroup;
+			children = (
+				03D701B32A69241100FF0C55 /* AlarmsViewController.swift */,
+			);
+			path = Alarms;
 			sourceTree = "<group>";
 		};
 		03D95DBB2A5C2D7400258BC6 /* LaunchScreen */ = {
@@ -146,12 +171,10 @@
 		03F0D43129CA1E8C004E72C3 /* bangunin */ = {
 			isa = PBXGroup;
 			children = (
+				03D701AF2A691F2600FF0C55 /* App */,
 				0356AA252A56958100D2DA4B /* Scene */,
 				03A5BFD32A5542E600C5B1D4 /* Model */,
-				03F0D43229CA1E8C004E72C3 /* AppDelegate.swift */,
-				03F0D43B29CA1E8F004E72C3 /* Assets.xcassets */,
 				03D95DC02A5C32D200258BC6 /* splash.png */,
-				03F0D43D29CA1E8F004E72C3 /* LaunchScreen.storyboard */,
 				03F0D44029CA1E8F004E72C3 /* Info.plist */,
 			);
 			path = bangunin;
@@ -308,6 +331,7 @@
 				03F0D43729CA1E8C004E72C3 /* HomeViewController.swift in Sources */,
 				03D95DB82A5BB6B600258BC6 /* HomePageUIComposer.swift in Sources */,
 				03D95DBD2A5C2D9200258BC6 /* LaunchScreenViewController.swift in Sources */,
+				03D701B42A69241200FF0C55 /* AlarmsViewController.swift in Sources */,
 				03A5BFD52A5542FC00C5B1D4 /* Annotation.swift in Sources */,
 				03F0D43329CA1E8C004E72C3 /* AppDelegate.swift in Sources */,
 				03D95DBA2A5C29F200258BC6 /* HomeProtocols.swift in Sources */,

@@ -88,7 +88,7 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
     
     private func setupConstraintsForCurrentLocationButton(){
         NSLayoutConstraint.activate([
-            currentLocationButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -32),
+            currentLocationButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
             currentLocationButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16),
         ])
     }
