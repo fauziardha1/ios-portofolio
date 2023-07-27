@@ -8,13 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		0356AA282A56CC2400D2DA4B /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0356AA272A56CC2300D2DA4B /* HomeInteractor.swift */; };
+		03A329C62A72698E00AAA850 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A329C52A72698E00AAA850 /* SearchBar.swift */; };
 		03A5BFD52A5542FC00C5B1D4 /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A5BFD42A5542FC00C5B1D4 /* Annotation.swift */; };
+		03B255E32A6FB0F5001C90ED /* PreviewSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B255E22A6FB0F5001C90ED /* PreviewSetup.swift */; };
 		03D701B42A69241200FF0C55 /* AlarmsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D701B32A69241100FF0C55 /* AlarmsViewController.swift */; };
 		03D95DB62A5BB47800258BC6 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D95DB52A5BB47800258BC6 /* HomePresenter.swift */; };
 		03D95DB82A5BB6B600258BC6 /* HomePageUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D95DB72A5BB6B600258BC6 /* HomePageUIComposer.swift */; };
 		03D95DBA2A5C29F200258BC6 /* HomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D95DB92A5C29F100258BC6 /* HomeProtocols.swift */; };
 		03D95DBD2A5C2D9200258BC6 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D95DBC2A5C2D9200258BC6 /* LaunchScreenViewController.swift */; };
 		03D95DC12A5C32D200258BC6 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 03D95DC02A5C32D200258BC6 /* splash.png */; };
+		03DB0F9D2A72783C00E160FA /* CommonUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03DB0F9C2A72783C00E160FA /* CommonUI.framework */; };
+		03DB0F9E2A72783C00E160FA /* CommonUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03DB0F9C2A72783C00E160FA /* CommonUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		03F0D43329CA1E8C004E72C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F0D43229CA1E8C004E72C3 /* AppDelegate.swift */; };
 		03F0D43729CA1E8C004E72C3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F0D43629CA1E8C004E72C3 /* HomeViewController.swift */; };
 		03F0D43C29CA1E8F004E72C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03F0D43B29CA1E8F004E72C3 /* Assets.xcassets */; };
@@ -41,9 +45,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		030952FC2A7259DC00C547BC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				03DB0F9E2A72783C00E160FA /* CommonUI.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0356AA272A56CC2300D2DA4B /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		03A329C52A72698E00AAA850 /* SearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchBar.swift; path = ../../../Common/CommonUI/Components/SearchBar/SearchBar.swift; sourceTree = "<group>"; };
 		03A5BFD42A5542FC00C5B1D4 /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
+		03B255E22A6FB0F5001C90ED /* PreviewSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewSetup.swift; sourceTree = "<group>"; };
 		03D701B02A691F2D00FF0C55 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
 		03D701B12A69209F00FF0C55 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = splash.png; path = ../../../../../Downloads/splash.png; sourceTree = "<group>"; };
 		03D701B32A69241100FF0C55 /* AlarmsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmsViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +72,7 @@
 		03D95DB92A5C29F100258BC6 /* HomeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocols.swift; sourceTree = "<group>"; };
 		03D95DBC2A5C2D9200258BC6 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		03D95DC02A5C32D200258BC6 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = splash.png; path = ../../../../Downloads/splash.png; sourceTree = "<group>"; };
+		03DB0F9C2A72783C00E160FA /* CommonUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommonUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		03F0D42F29CA1E8C004E72C3 /* bangunin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bangunin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03F0D43229CA1E8C004E72C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03F0D43629CA1E8C004E72C3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03DB0F9D2A72783C00E160FA /* CommonUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,12 +112,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0310F3942A6FCEDE0047FD12 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				03DB0F9C2A72783C00E160FA /* CommonUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		0356AA252A56958100D2DA4B /* Scene */ = {
 			isa = PBXGroup;
 			children = (
 				03D701B22A6923E600FF0C55 /* Alarms */,
 				03D95DBB2A5C2D7400258BC6 /* LaunchScreen */,
 				0356AA262A5695D000D2DA4B /* Home */,
+				03B255E22A6FB0F5001C90ED /* PreviewSetup.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -110,6 +141,14 @@
 				03D95DB92A5C29F100258BC6 /* HomeProtocols.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		03A329C42A7266BC00AAA850 /* PreviewHelper */ = {
+			isa = PBXGroup;
+			children = (
+				03A329C52A72698E00AAA850 /* SearchBar.swift */,
+			);
+			path = PreviewHelper;
 			sourceTree = "<group>";
 		};
 		03A5BFD32A5542E600C5B1D4 /* Model */ = {
@@ -155,6 +194,7 @@
 				03F0D44829CA1E90004E72C3 /* banguninTests */,
 				03F0D45229CA1E90004E72C3 /* banguninUITests */,
 				03F0D43029CA1E8C004E72C3 /* Products */,
+				0310F3942A6FCEDE0047FD12 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -174,6 +214,7 @@
 				03D701AF2A691F2600FF0C55 /* App */,
 				0356AA252A56958100D2DA4B /* Scene */,
 				03A5BFD32A5542E600C5B1D4 /* Model */,
+				03A329C42A7266BC00AAA850 /* PreviewHelper */,
 				03D95DC02A5C32D200258BC6 /* splash.png */,
 				03F0D44029CA1E8F004E72C3 /* Info.plist */,
 			);
@@ -207,6 +248,7 @@
 				03F0D42B29CA1E8C004E72C3 /* Sources */,
 				03F0D42C29CA1E8C004E72C3 /* Frameworks */,
 				03F0D42D29CA1E8C004E72C3 /* Resources */,
+				030952FC2A7259DC00C547BC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -260,7 +302,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1420;
+				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					03F0D42E29CA1E8C004E72C3 = {
@@ -334,8 +376,10 @@
 				03D701B42A69241200FF0C55 /* AlarmsViewController.swift in Sources */,
 				03A5BFD52A5542FC00C5B1D4 /* Annotation.swift in Sources */,
 				03F0D43329CA1E8C004E72C3 /* AppDelegate.swift in Sources */,
+				03B255E32A6FB0F5001C90ED /* PreviewSetup.swift in Sources */,
 				03D95DBA2A5C29F200258BC6 /* HomeProtocols.swift in Sources */,
 				03D95DB62A5BB47800258BC6 /* HomePresenter.swift in Sources */,
+				03A329C62A72698E00AAA850 /* SearchBar.swift in Sources */,
 				0356AA282A56CC2400D2DA4B /* HomeInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -515,6 +559,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -545,6 +590,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

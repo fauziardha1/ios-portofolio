@@ -57,6 +57,13 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
         return button
     }()
     
+    // for search bar
+    let searchBar: SearchBar = {
+        let search = SearchBar()
+        search.translatesAutoresizingMaskIntoConstraints = false
+        return search
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getPermissionForLocation()
@@ -72,9 +79,11 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
     private func layout() {
         view.addSubview(mapView)
         view.addSubview(currentLocationButton)
+        view.addSubview(searchBar)
         
         setupConstraintsForMapView()
         setupConstraintsForCurrentLocationButton()
+        setupConstraintsForSearchBar()
     }
     
     private func setupConstraintsForMapView() {
@@ -93,8 +102,24 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
         ])
     }
     
+    private func setupConstraintsForSearchBar() {
+        NSLayoutConstraint.activate([
+            searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
+            searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
+            searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
+            searchBar.heightAnchor.constraint(equalToConstant: 57)
+        ])
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
         displayFirstViewOfMap()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     private func setAnnotation(_ point: AnnotationModel){
@@ -120,7 +145,7 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
     func updateCurrentLocation() {}
     
     func displayFirstViewOfMap(_ position: AnnotationModel? = nil, _ regionRadius: Double = 1000) {
-        var pos: AnnotationModel = position ?? defaultLocation
+        let pos: AnnotationModel = position ?? defaultLocation
         let initialLocation = CLLocationCoordinate2D(latitude: pos.lat, longitude: pos.long)
         let coordinateRegion = MKCoordinateRegion(center: initialLocation, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         
@@ -151,3 +176,16 @@ extension HomeViewController: CLLocationManagerDelegate {
             print(#function, statusString)
         }
 }
+
+#if DEBUG
+import SwiftUI
+import CommonUI
+@available(iOS 13.0.0, *)
+struct DetailViewController_Preview : PreviewProvider {
+    static var previews: some View{
+        ViewControllerPreview {
+            HomeViewController()
+        }.previewDevice("iPhone 14")
+    }
+}
+#endif

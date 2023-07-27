@@ -7,5 +7,6 @@ public func main(){
 }
 
 func countItem<Number>(_ item: [Number]) -> Number {
-    return item.reduce(0,Number) as! Number
+//    return item.reduce(0,Number) as! Number
+    return 0 as! Number
 }

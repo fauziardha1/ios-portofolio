@@ -29,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 }
 
+// Functionality to setup UITabBar
 extension AppDelegate {
     func setupRootApp(window: inout UIWindow?) {
         if window == nil {
