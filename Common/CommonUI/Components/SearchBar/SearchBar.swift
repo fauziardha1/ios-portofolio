@@ -9,7 +9,19 @@ import Foundation
 import UIKit
 
 public class SearchBar: UIView {
+    // MARK: Properties
+    public var input: String = String()
+    public var buttonSearchAction: () -> Void = {}
+    public var onInputChangeAction: () -> Void = {}
     
+    public convenience init(frame: CGRect = CGRect(x: 0, y: 0, width: 358, height: 57), buttonSearchAction: @escaping () -> Void = {}, onInputChangeAction: @escaping () -> Void = {}) {
+        self.init(frame: frame)
+        self.buttonSearchAction = buttonSearchAction
+        self.onInputChangeAction = onInputChangeAction
+        setupView()
+    }
+    
+    // MARK: UIComponents
     let searchButton: UIButton = {
         let button = UIButton()
         let image = UIImage(named: "cui_search_icon")
@@ -45,15 +57,21 @@ public class SearchBar: UIView {
     
     private func setupView(){
         backgroundColor = .white
-//        tempConfig()
+//        uiDebugConfig()
         layer.cornerRadius = 57/2
         clipsToBounds = true
         
+        setupUIConfig()
         setupAddSubView()
         layout()
     }
     
-    private func tempConfig(){
+    private func setupUIConfig() {
+        searchButton.addTarget(self, action: #selector(onSearchButtonTapped), for: .touchUpInside)
+        searchInput.addTarget(self, action: #selector(onSearchInputTextChange), for: .editingChanged)
+    }
+    
+    private func uiDebugConfig(){
         backgroundColor = .lightGray
         searchButton.backgroundColor = .red
         searchInput.backgroundColor = .systemBlue
@@ -73,9 +91,19 @@ public class SearchBar: UIView {
             contentStack.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -8)
         ])
     }
+    
+    @objc func onSearchButtonTapped() {
+        self.buttonSearchAction()
+    }
+    
+    @objc func onSearchInputTextChange(_ textField: UITextField) {
+        self.input = textField.text ?? String()
+        self.onInputChangeAction()
+    }
+    
 }
 
-
+#if DEBUG
 import SwiftUI
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
@@ -85,3 +113,4 @@ struct SearchView_Previews: PreviewProvider {
         .previewLayout(.fixed(width: 358, height: 57))
     }
 }
+#endif

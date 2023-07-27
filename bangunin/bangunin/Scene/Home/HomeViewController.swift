@@ -70,6 +70,7 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
         
         setup()
         layout()
+        setupUIConfig()
     }
     
     private func setup() {
@@ -84,6 +85,17 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
         setupConstraintsForMapView()
         setupConstraintsForCurrentLocationButton()
         setupConstraintsForSearchBar()
+    }
+    
+    private func setupUIConfig() {
+        searchBar.buttonSearchAction = {
+            print("button action from homeviewcontroller")
+        }
+        
+        searchBar.onInputChangeAction = {
+            print("onInputChangeAction from hoveViewController: ")
+        }
+        
     }
     
     private func setupConstraintsForMapView() {
