@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		031BA9892A7374B900068801 /* Inter-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 031BA9802A7374B900068801 /* Inter-ExtraLight.ttf */; };
+		031BA98A2A7374B900068801 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 031BA9812A7374B900068801 /* Inter-Medium.ttf */; };
+		031BA98B2A7374B900068801 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 031BA9822A7374B900068801 /* Inter-Bold.ttf */; };
+		031BA98C2A7374B900068801 /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 031BA9832A7374B900068801 /* Inter-Light.ttf */; };
+		031BA98D2A7374B900068801 /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 031BA9842A7374B900068801 /* Inter-ExtraBold.ttf */; };
+		031BA98E2A7374B900068801 /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 031BA9852A7374B900068801 /* Inter-Black.ttf */; };
+		031BA98F2A7374B900068801 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 031BA9862A7374B900068801 /* Inter-SemiBold.ttf */; };
+		031BA9902A7374B900068801 /* Inter-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 031BA9872A7374B900068801 /* Inter-Thin.ttf */; };
+		031BA9912A7374B900068801 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 031BA9882A7374B900068801 /* Inter-Regular.ttf */; };
+		031BA9932A73812500068801 /* FontSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031BA9922A73812500068801 /* FontSetup.swift */; };
 		0356AA282A56CC2400D2DA4B /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0356AA272A56CC2300D2DA4B /* HomeInteractor.swift */; };
 		03A329C62A72698E00AAA850 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A329C52A72698E00AAA850 /* SearchBar.swift */; };
 		03A5BFD52A5542FC00C5B1D4 /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A5BFD42A5542FC00C5B1D4 /* Annotation.swift */; };
@@ -60,11 +70,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		031BA9802A7374B900068801 /* Inter-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraLight.ttf"; sourceTree = "<group>"; };
+		031BA9812A7374B900068801 /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
+		031BA9822A7374B900068801 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
+		031BA9832A7374B900068801 /* Inter-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Light.ttf"; sourceTree = "<group>"; };
+		031BA9842A7374B900068801 /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
+		031BA9852A7374B900068801 /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Black.ttf"; sourceTree = "<group>"; };
+		031BA9862A7374B900068801 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
+		031BA9872A7374B900068801 /* Inter-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Thin.ttf"; sourceTree = "<group>"; };
+		031BA9882A7374B900068801 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
+		031BA9922A73812500068801 /* FontSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSetup.swift; sourceTree = "<group>"; };
 		0356AA272A56CC2300D2DA4B /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		03A329C52A72698E00AAA850 /* SearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchBar.swift; path = ../../../Common/CommonUI/Components/SearchBar/SearchBar.swift; sourceTree = "<group>"; };
 		03A5BFD42A5542FC00C5B1D4 /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
 		03B255E22A6FB0F5001C90ED /* PreviewSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewSetup.swift; sourceTree = "<group>"; };
-		03D701B02A691F2D00FF0C55 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
 		03D701B12A69209F00FF0C55 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = splash.png; path = ../../../../../Downloads/splash.png; sourceTree = "<group>"; };
 		03D701B32A69241100FF0C55 /* AlarmsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmsViewController.swift; sourceTree = "<group>"; };
 		03D95DB52A5BB47800258BC6 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
@@ -120,6 +139,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		031BA97F2A73746000068801 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				031BA9942A73821E00068801 /* setup */,
+				031BA9852A7374B900068801 /* Inter-Black.ttf */,
+				031BA9822A7374B900068801 /* Inter-Bold.ttf */,
+				031BA9842A7374B900068801 /* Inter-ExtraBold.ttf */,
+				031BA9802A7374B900068801 /* Inter-ExtraLight.ttf */,
+				031BA9832A7374B900068801 /* Inter-Light.ttf */,
+				031BA9812A7374B900068801 /* Inter-Medium.ttf */,
+				031BA9882A7374B900068801 /* Inter-Regular.ttf */,
+				031BA9862A7374B900068801 /* Inter-SemiBold.ttf */,
+				031BA9872A7374B900068801 /* Inter-Thin.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		031BA9942A73821E00068801 /* setup */ = {
+			isa = PBXGroup;
+			children = (
+				031BA9922A73812500068801 /* FontSetup.swift */,
+			);
+			path = setup;
+			sourceTree = "<group>";
+		};
 		0356AA252A56958100D2DA4B /* Scene */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,10 +206,10 @@
 		03D701AF2A691F2600FF0C55 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				031BA97F2A73746000068801 /* Fonts */,
 				03F0D43229CA1E8C004E72C3 /* AppDelegate.swift */,
 				03D701B12A69209F00FF0C55 /* splash.png */,
 				03F0D43B29CA1E8F004E72C3 /* Assets.xcassets */,
-				03D701B02A691F2D00FF0C55 /* splash.png */,
 				03F0D43D29CA1E8F004E72C3 /* LaunchScreen.storyboard */,
 			);
 			path = App;
@@ -343,9 +387,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				031BA98B2A7374B900068801 /* Inter-Bold.ttf in Resources */,
+				031BA98E2A7374B900068801 /* Inter-Black.ttf in Resources */,
 				03D95DC12A5C32D200258BC6 /* splash.png in Resources */,
 				03F0D43F29CA1E8F004E72C3 /* LaunchScreen.storyboard in Resources */,
+				031BA98D2A7374B900068801 /* Inter-ExtraBold.ttf in Resources */,
+				031BA9902A7374B900068801 /* Inter-Thin.ttf in Resources */,
 				03F0D43C29CA1E8F004E72C3 /* Assets.xcassets in Resources */,
+				031BA98A2A7374B900068801 /* Inter-Medium.ttf in Resources */,
+				031BA9892A7374B900068801 /* Inter-ExtraLight.ttf in Resources */,
+				031BA98F2A7374B900068801 /* Inter-SemiBold.ttf in Resources */,
+				031BA9912A7374B900068801 /* Inter-Regular.ttf in Resources */,
+				031BA98C2A7374B900068801 /* Inter-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +433,7 @@
 				03D95DBA2A5C29F200258BC6 /* HomeProtocols.swift in Sources */,
 				03D95DB62A5BB47800258BC6 /* HomePresenter.swift in Sources */,
 				03A329C62A72698E00AAA850 /* SearchBar.swift in Sources */,
+				031BA9932A73812500068801 /* FontSetup.swift in Sources */,
 				0356AA282A56CC2400D2DA4B /* HomeInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

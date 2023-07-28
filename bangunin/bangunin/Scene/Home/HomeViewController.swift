@@ -34,12 +34,13 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
     }
     private let defaultLocation: AnnotationModel = .init(lat: -6.174867960298316, long: 106.82727149914197, title: "Monas")
     
-    lazy var mapView: MKMapView = {
+    let mapView: MKMapView = {
         let mapView = MKMapView()
         mapView.translatesAutoresizingMaskIntoConstraints = false
         return mapView
     }()
-    lazy var currentLocationButton: UIButton = {
+    lazy var currentLocationButton: UIButton = { [weak self] in
+        guard let self = self else { return UIButton() }
         let button = UIButton(type: .system)
         button.setImage(UIImage(named: "currentLocationImage"), for: .normal)
         
@@ -64,6 +65,13 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
         return search
     }()
     
+    let label: UILabel = {
+        let label = UILabel()
+        label.text = "Hello World"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getPermissionForLocation()
@@ -81,10 +89,12 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
         view.addSubview(mapView)
         view.addSubview(currentLocationButton)
         view.addSubview(searchBar)
+        view.addSubview(label)
         
         setupConstraintsForMapView()
         setupConstraintsForCurrentLocationButton()
         setupConstraintsForSearchBar()
+        setupConstraintsForLabel()
     }
     
     private func setupUIConfig() {
@@ -121,6 +131,15 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
             searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
             searchBar.heightAnchor.constraint(equalToConstant: 57)
         ])
+    }
+    
+    private func setupConstraintsForLabel() {
+        NSLayoutConstraint.activate([
+            label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            label.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+        
+        print("Font system: \(label.font)")
     }
     
     override func viewWillAppear(_ animated: Bool) {

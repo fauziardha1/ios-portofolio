@@ -26,6 +26,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(_ application: UIApplication) {
         window?.isHidden = false
     }
+
+    
+    override init() {
+        super.init()
+        UIFont.overrideInitialize() // to change default font for entire app
+    }
     
 }
 
