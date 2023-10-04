@@ -1,4 +1,5 @@
 import Foundation
+import PlaygroundSupport
 
-main()
-
+PlaygroundPage.current.needsIndefiniteExecution = true
+PlaygroundPage.current.liveView = ViewControllerPlayGround()
